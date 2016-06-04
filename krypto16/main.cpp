@@ -5,14 +5,10 @@
 
 using namespace std;
 
-/* The main is at the end of the document */
-/* The table sbox and Rcon have been taken from internet */
-
 void rotate(unsigned char *word)
 {
     unsigned char c;
     int i;
-
     c = word[0];
     for (i = 0; i < 3; i++)
         word[i] = word[i+1];
@@ -210,7 +206,6 @@ void FinalRound(unsigned char** state, unsigned char** expandedKeyRound)
     AddRoundKey(state, expandedKeyRound);
 }
 
-/// Storing in RoundKey the part of the expansion Key which is needed for this round
 void updateRoundKey(unsigned char* expandedKey,unsigned char** RoundKey,int k)
 {
     for(int i=0;i<4;++i)
@@ -222,7 +217,6 @@ void updateRoundKey(unsigned char* expandedKey,unsigned char** RoundKey,int k)
     }
 }
 
-// Copy the text to encrypt in the matrix (4x4) called state
 void updateState(unsigned char* plain,unsigned char** state)
 {
     for(int i=0;i<4;++i)
@@ -235,7 +229,6 @@ void updateState(unsigned char* plain,unsigned char** state)
 }
 
 // Copy the encrypted text store in state in the variable plain
-// It is this variable which is going to be ouput in the cout
 void updatePlain(unsigned char* plain,unsigned char** state)
 {
     for(int i=0;i<4;++i)
@@ -247,7 +240,6 @@ void updatePlain(unsigned char* plain,unsigned char** state)
     }
 }
 
-/// Main algo
 int main()
 {
         ///Exaction of the key in a unsigned char array
@@ -263,7 +255,7 @@ int main()
             key[i] = (unsigned char) buff[i];
         }
 
-        ///Expand the key and store it in 'expandedKey'
+        ///Expand the key 
         int expandedKeySize = 176;
         unsigned char expandedKey[expandedKeySize];
         int keySize = 16;
@@ -287,32 +279,26 @@ int main()
         }
 
         ///Extracting the cipher text, each 16 bytes block per each 16 bytes block
-        //The i-th encrypted block is cout before the extraction of the (i+1)-th block
         while(cin.read(buff,16))
         {
             for(int i=0;i<block_size;++i)
             {
                 cipher[i] = (unsigned char) buff[i];
             }
-
-            //First round
             updateState(cipher, state);
             updateRoundKey(expandedKey, RoundKey, 0);
 
             AddRoundKey(state, RoundKey);
 
-            //9 more round
             for (int k = 1; k < TotalRound; k++)
             {
                 updateRoundKey(expandedKey, RoundKey, k);
                 Round(state, RoundKey);
             }
 
-            //Final round
             updateRoundKey(expandedKey, RoundKey, TotalRound);
             FinalRound(state, RoundKey);
 
-            //cout the encrypted text
             updatePlain(cipher, state);
             for(int i=0;i<block_size;++i)
             {
