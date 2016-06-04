@@ -1,3 +1,6 @@
+/* Implementation of the AES encryption scheme */
+/* Size key : 128 bits */
+
 #include <iostream>
 #include <string>
 #include <stdio.h>
