@@ -2,9 +2,9 @@
 
 * AES
 * SHA-2
-* Elliptic curve :
-** Arithmetique : ECarith
-** Curve Characteristic : EC
+* Elliptic curve 
+  * Arithmetique : ECarith
+  * Curve Characteristic : EC
 
 # Artithemtic implemtations
 
