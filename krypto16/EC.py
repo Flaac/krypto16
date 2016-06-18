@@ -1,10 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Apr 25 18:42:21 2016
-
-@author: flac
-@title: Elliptic Curve Points
-"""
 
 import sys
 

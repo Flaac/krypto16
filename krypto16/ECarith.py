@@ -1,10 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Thu May 12 10:19:31 2016
-
-@author: flac
-@title: Elliptic Curve Arithmetic - Kattis
-"""
 
 import sys;
 

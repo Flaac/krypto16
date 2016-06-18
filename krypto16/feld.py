@@ -1,10 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Tue May 17 11:26:54 2016
-
-@author: flac
-@title : Feldman Verifiable Secret Sharing - Kattis
-"""
 
 import sys;
 

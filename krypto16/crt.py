@@ -1,12 +1,6 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Sat Apr 16 16:50:16 2016
 
-@author: flac
-@title: Chinese Remainder Theorem - Kattis
-"""
 import sys
-
 
 # Extended Euclidean Algorithm
 def extEuc(a, b):
@@ -30,7 +24,6 @@ def extEuc(a, b):
     
 
 #Computing the Chinese Remainder Theorem
-#According to the solution explained in the report
 def crt(q,a):
     N = 1
     for i in q:
@@ -42,7 +35,6 @@ def crt(q,a):
     return res % N
         
 # Main part of the program
-# Getting the input, use crt() to get the result and print it
 line = sys.stdin.readline()
 while line:
     tab = [int(a) for a in line.split()]

@@ -1,10 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Sat Apr 16 15:48:09 2016
-
-@author: flac
-@title: Modular Exponentiation - Kattis
-"""
 
 import sys
 

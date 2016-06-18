@@ -1,10 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Sun Apr 17 11:52:42 2016
-
-@author: flac
-@title: RSA factor - Kattis
-"""
 
 import sys
 import random
