@@ -3,11 +3,9 @@
 * AES
 * SHA-2
 * Elliptic curve 
-  * Arithmetique : ECarith
-  * Curve Characteristic : EC
-
-# Artithemtic implemtations
-
-* Feldman share signature : feld
-* Chinese Remainder Theorem : crt
+  * Arithmetic : *ECarith*
+  * Number point : *EC*
+* RSA factorisation : *rsafact*
+* Feldman Secret Sharing : *feld*
+* Chinese Remainder Theorem : *crt*
 
